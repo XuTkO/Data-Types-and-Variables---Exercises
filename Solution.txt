@@ -3,22 +3,16 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number = Integer.parseInt(scanner.nextLine());
-        String bool = "";
+        double firstNum = Double.parseDouble(scanner.nextLine());
+        double secondNum = Double.parseDouble(scanner.nextLine());
+
+        boolean compare = Math.abs(firstNum-secondNum) < 0.000001;
 
 
-            for (int a = 2; a <= number; a++) {
-                boolean isTrue = true;
-                bool = "True";
-                for (int b = 2; b <= Math.sqrt(a); b++) {
-                    if (a % b == 0) {
-                        isTrue = false;
-                        bool = "False";
-                        break;
-                    }
-                }
-
-                System.out.printf("%s -> %s%n", a, bool);
-            }
+        if (!compare) {
+            System.out.println("False");
+        } else {
+            System.out.println("True");
         }
     }
+}
