@@ -1,13 +1,22 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        char firstLetter = scanner.nextLine().charAt(0);
-        char secondLetter = scanner.nextLine().charAt(0);
-        char thirdLetter = scanner.nextLine().charAt(0);
+        int centuries = Integer.parseInt(scanner.nextLine());
+        int years = centuries*100;
+        int days = (int)(years*365.2422);
+        int hours = days*24;
+        long minutes = hours*60;
+        long seconds = minutes*60;
+        long milliseconds = seconds*1000;
+        BigInteger microseconds = BigInteger.valueOf(milliseconds*1000);
+        BigInteger nanoseconds= microseconds.multiply(new BigInteger("1000"));
 
-        System.out.printf("%c%c%c",thirdLetter,secondLetter,firstLetter);
+        System.out.printf("%d centuries = %d years = %d days = %d hours = %d " +
+                "minutes = %d seconds = %d milliseconds = %d microseconds = %d nanoseconds",
+                centuries,years,days,hours,minutes,seconds,milliseconds,microseconds,nanoseconds);
 
     }
 }
