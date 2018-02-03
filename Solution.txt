@@ -3,14 +3,10 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String word = scanner.nextLine();
+        String firstWord = scanner.nextLine();
+        String secondWord = scanner.nextLine();
 
-        Boolean b = Boolean.valueOf(word);
-
-        if(b.equals(true)) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
+        String thirdWord = firstWord + " " + secondWord;
+        System.out.println(thirdWord);
     }
 }
