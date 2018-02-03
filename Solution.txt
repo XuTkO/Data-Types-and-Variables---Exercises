@@ -1,15 +1,11 @@
 import java.util.Scanner;
-public class Demo {
 
+public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        String firstInput = "Software University";
-        char secondInput = 'B';
-        char thirdInput = 'y';
-        char fourthInput = 'e';
-        String fifthInput = "I love programming";
-
-        System.out.printf("%s%n%s%n%s%n%s%n%s",firstInput,secondInput,thirdInput,fourthInput,fifthInput);
+        String hexa = scanner.nextLine();
+        hexa = hexa.substring(2,hexa.length());
+        int deci = Integer.parseInt(hexa, 16);
+        System.out.println(deci);
     }
 }
