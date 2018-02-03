@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        byte firstNumber = Byte.parseByte(scanner.nextLine());
+        short secondNumber = Short.parseShort(scanner.nextLine());
+        short thirdNumber = Short.parseShort(scanner.nextLine());
+        int  fourthNumber = Integer.parseInt(scanner.nextLine());
+        long  fifthNumber = Long.parseLong(scanner.nextLine());
+        long  sixthNumber = Long.parseLong(scanner.nextLine());
+        long  seventhNumber = Long.parseLong(scanner.nextLine());
+
+        System.out.println(firstNumber);
+        System.out.println(secondNumber);
+        System.out.println(thirdNumber);
+        System.out.println(fourthNumber);
+        System.out.println(fifthNumber);
+        System.out.println(sixthNumber);
+        System.out.println(seventhNumber);
+        
+    }
+}
