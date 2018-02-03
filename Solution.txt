@@ -1,22 +1,29 @@
-import java.math.BigInteger;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Scanner;
-
-public class Demo {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int centuries = Integer.parseInt(scanner.nextLine());
-        int years = centuries*100;
-        int days = (int)(years*365.2422);
-        int hours = days*24;
-        long minutes = hours*60;
-        long seconds = minutes*60;
-        long milliseconds = seconds*1000;
-        BigInteger microseconds = BigInteger.valueOf(milliseconds*1000);
-        BigInteger nanoseconds= microseconds.multiply(new BigInteger("1000"));
 
-        System.out.printf("%d centuries = %d years = %d days = %d hours = %d " +
-                "minutes = %d seconds = %d milliseconds = %d microseconds = %d nanoseconds",
-                centuries,years,days,hours,minutes,seconds,milliseconds,microseconds,nanoseconds);
+        int distanceInMeters = Integer.parseInt(scanner.nextLine());
+        int hours = Integer.parseInt(scanner.nextLine());
+        int minutes = Integer.parseInt(scanner.nextLine());
+        int seconds = Integer.parseInt(scanner.nextLine());
+
+        float miles = (float)distanceInMeters/1609;
+        int totalSeconds = seconds+minutes*60+hours*3600;
+        double totalHours = hours + (double)minutes/60 + (double)seconds/3600;
+        float metersPerSecond = (float)distanceInMeters/totalSeconds;
+        float kmPerHours = (float)(distanceInMeters/1000)/(float)totalHours;
+        float milesPerHours = (float)(miles/totalHours);
+
+        if (distanceInMeters>=1000 && distanceInMeters< 10000){
+            System.out.printf("%06f%n%06f%n%06f",metersPerSecond,kmPerHours,milesPerHours);
+        } else if (distanceInMeters>=10000 && distanceInMeters <= 99999){
+            System.out.printf("%06f%n%06f%n%06f",metersPerSecond,kmPerHours,milesPerHours);
+        } else if (distanceInMeters>=100000 && distanceInMeters <= 999999){
+            System.out.printf("%.5f%n%.5f%n%.5f",metersPerSecond,kmPerHours,milesPerHours);
+        }
 
     }
 }
