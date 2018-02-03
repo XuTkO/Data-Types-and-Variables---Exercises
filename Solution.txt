@@ -3,13 +3,22 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-            int number = Integer.parseInt(scanner.nextLine());
+        int number = Integer.parseInt(scanner.nextLine());
+        String bool = "";
 
-            String hex = Integer.toHexString(number).toUpperCase();
-            String binary = Integer.toBinaryString(number);
 
-        System.out.println(hex);
-        System.out.println(binary);
+            for (int a = 2; a <= number; a++) {
+                boolean isTrue = true;
+                bool = "True";
+                for (int b = 2; b <= Math.sqrt(a); b++) {
+                    if (a % b == 0) {
+                        isTrue = false;
+                        bool = "False";
+                        break;
+                    }
+                }
 
+                System.out.printf("%s -> %s%n", a, bool);
+            }
+        }
     }
-}
