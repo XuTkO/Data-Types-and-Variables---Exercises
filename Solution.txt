@@ -3,16 +3,11 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double firstNum = Double.parseDouble(scanner.nextLine());
-        double secondNum = Double.parseDouble(scanner.nextLine());
+        int firstNum = Integer.parseInt(scanner.nextLine());
+        int secondNum = Integer.parseInt(scanner.nextLine());
 
-        boolean compare = Math.abs(firstNum-secondNum) < 0.000001;
-
-
-        if (!compare) {
-            System.out.println("False");
-        } else {
-            System.out.println("True");
+        for (char a = (char)firstNum; a <= secondNum; a ++){
+            System.out.print(a+" ");
         }
     }
 }
