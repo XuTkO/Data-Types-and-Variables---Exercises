@@ -1,29 +1,19 @@
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.#############");
 
-        int distanceInMeters = Integer.parseInt(scanner.nextLine());
-        int hours = Integer.parseInt(scanner.nextLine());
-        int minutes = Integer.parseInt(scanner.nextLine());
-        int seconds = Integer.parseInt(scanner.nextLine());
+        double width = Double.parseDouble(scanner.nextLine());
+        double height = Double.parseDouble(scanner.nextLine());
 
-        float miles = (float)distanceInMeters/1609;
-        int totalSeconds = seconds+minutes*60+hours*3600;
-        double totalHours = hours + (double)minutes/60 + (double)seconds/3600;
-        float metersPerSecond = (float)distanceInMeters/totalSeconds;
-        float kmPerHours = (float)(distanceInMeters/1000)/(float)totalHours;
-        float milesPerHours = (float)(miles/totalHours);
+        double perimeter = 2*(width+height);
+        double area = width*height;
 
-        if (distanceInMeters>=1000 && distanceInMeters< 10000){
-            System.out.printf("%06f%n%06f%n%06f",metersPerSecond,kmPerHours,milesPerHours);
-        } else if (distanceInMeters>=10000 && distanceInMeters <= 99999){
-            System.out.printf("%06f%n%06f%n%06f",metersPerSecond,kmPerHours,milesPerHours);
-        } else if (distanceInMeters>=100000 && distanceInMeters <= 999999){
-            System.out.printf("%.5f%n%.5f%n%.5f",metersPerSecond,kmPerHours,milesPerHours);
-        }
-
+        System.out.println(df.format(perimeter));
+        System.out.println(df.format(area));
+        System.out.println(df.format(Math.sqrt(width*width + height*height)));
     }
 }
