@@ -3,15 +3,14 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a = Integer.parseInt(scanner.nextLine());
-        int b = Integer.parseInt(scanner.nextLine());
 
-        System.out.printf("Before:%na = %d%nb = %d%n",a,b);
+        String firstName = scanner.nextLine();
+        String secondame = scanner.nextLine();
+        int age = Integer.parseInt(scanner.nextLine());
+        char gender = scanner.nextLine().charAt(0);
+        long personalId = Long.parseLong(scanner.nextLine());
+        int employeeNumber = Integer.parseInt(scanner.nextLine());
 
-        int c = b;
-        b=a;
-        a=c;
-
-        System.out.printf("After:%na = %d%nb = %d",a,b);
+        System.out.printf("First name: %s%nLast name: %s%nAge: %d%nGender: %c%nPersonal ID: %d%nUnique Employee number: %d",firstName,secondame,age,gender,personalId,employeeNumber);
     }
 }
