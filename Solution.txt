@@ -3,10 +3,15 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String firstWord = scanner.nextLine();
-        String secondWord = scanner.nextLine();
+        int a = Integer.parseInt(scanner.nextLine());
+        int b = Integer.parseInt(scanner.nextLine());
 
-        String thirdWord = firstWord + " " + secondWord;
-        System.out.println(thirdWord);
+        System.out.printf("Before:%na = %d%nb = %d%n",a,b);
+
+        int c = b;
+        b=a;
+        a=c;
+
+        System.out.printf("After:%na = %d%nb = %d",a,b);
     }
 }
