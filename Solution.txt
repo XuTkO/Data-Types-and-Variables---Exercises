@@ -3,15 +3,13 @@ import java.util.Scanner;
 public class Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        char symbol = scanner.nextLine().charAt(0);
+            int number = Integer.parseInt(scanner.nextLine());
 
-        if (symbol=='a' || symbol == 'y' ||  symbol=='o' || symbol == 'e' || symbol=='i' || symbol == 'u') {
-            System.out.println("vowel");
-        } else if (symbol=='0' || symbol == '1' ||  symbol=='2' || symbol == '3' || symbol=='4' || symbol == '5' ||
-        symbol=='6' || symbol == '7' ||  symbol=='8' || symbol == '9'){
-            System.out.println("digit");
-        } else {
-            System.out.println("other");
-        }
+            String hex = Integer.toHexString(number).toUpperCase();
+            String binary = Integer.toBinaryString(number);
+
+        System.out.println(hex);
+        System.out.println(binary);
+
     }
 }
