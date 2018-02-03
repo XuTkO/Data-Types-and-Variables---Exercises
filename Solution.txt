@@ -1,14 +1,15 @@
-import java.math.BigDecimal;
 import java.util.Scanner;
 public class Demo {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        BigDecimal firstNumber = new BigDecimal(scanner.nextLine());
-        BigDecimal secondNumber = new BigDecimal(scanner.nextLine());
-        BigDecimal thirdNumber = new BigDecimal(scanner.nextLine());
-        
-        System.out.printf("%s%n%s%n%s",firstNumber,secondNumber,thirdNumber);
+        String firstInput = "Software University";
+        char secondInput = 'B';
+        char thirdInput = 'y';
+        char fourthInput = 'e';
+        String fifthInput = "I love programming";
+
+        System.out.printf("%s%n%s%n%s%n%s%n%s",firstInput,secondInput,thirdInput,fourthInput,fifthInput);
     }
 }
